@@ -48,6 +48,7 @@ Vagrant::Config.run do |config|
      chef.add_recipe 'dotfiles'
      chef.add_recipe "openssl"
      #chef.add_recipe "postgresql"
+     chef.add_recipe "rvm_prereq"
      chef.add_recipe "rvm::user_install"
      #chef.add_role "web"
   
