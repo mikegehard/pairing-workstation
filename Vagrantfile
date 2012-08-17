@@ -23,7 +23,7 @@ Vagrant::Config.run do |config|
   # Assign this VM to a bridged network, allowing you to connect directly to a
   # network using the host's network device. This makes the VM appear as another
   # physical device on your network.
-  # config.vm.network :bridged
+  config.vm.network :bridged
 
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
@@ -53,6 +53,7 @@ Vagrant::Config.run do |config|
      chef.add_recipe "rvm_prereq"
      chef.add_recipe "rvm::user"
      chef.add_recipe "wemux"
+     chef.add_recipe "user::data_bag"
      #chef.add_role "web"
   
      # You may also specify custom JSON attributes:
@@ -63,7 +64,8 @@ Vagrant::Config.run do |config|
             'default_ruby' => '1.9.3'}],
          'user_rubies' => ['1.9.3'],
          'user_global_gems' => ['name' => 'bundler', 'name' => 'rake' ]
-       }
+       },
+       'users' => ['visitor']
      }
 
    end
