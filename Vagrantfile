@@ -52,6 +52,7 @@ Vagrant::Config.run do |config|
      #chef.add_recipe "postgresql"
      chef.add_recipe "rvm_prereq"
      chef.add_recipe "rvm::user"
+     chef.add_recipe "wemux"
      #chef.add_role "web"
   
      # You may also specify custom JSON attributes:
