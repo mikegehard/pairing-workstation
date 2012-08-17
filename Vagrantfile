@@ -49,14 +49,18 @@ Vagrant::Config.run do |config|
      chef.add_recipe "openssl"
      #chef.add_recipe "postgresql"
      chef.add_recipe "rvm_prereq"
-     chef.add_recipe "rvm::user_install"
+     chef.add_recipe "rvm::user"
      #chef.add_role "web"
   
      # You may also specify custom JSON attributes:
      chef.json = { 
-         'rvm' => {'user_installs' => [
-                      {'user' => 'vagrant'}]
-         }
+       'rvm' => {
+         'user_installs' => [{
+            'user' => 'vagrant',
+            'default_ruby' => '1.9.3'}],
+         'user_rubies' => ['1.9.3'],
+         'user_global_gems' => ['name' => 'bundler', 'name' => 'rake' ]
+       }
      }
 
    end
