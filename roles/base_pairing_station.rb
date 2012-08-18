@@ -17,7 +17,7 @@ run_list(
 default_attributes(
 'rvm' => {
   'user_installs' => [{
-    'user' => 'vagrant',
+    'user' => node['current_user'],
     'default_ruby' => '1.9.3'}],
   'user_rubies' => ['1.9.3'],
   'user_global_gems' => ['name' => 'bundler', 'name' => 'rake' ]

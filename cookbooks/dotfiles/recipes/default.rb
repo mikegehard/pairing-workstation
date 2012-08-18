@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-user = 'vagrant'
+user = node['current_user']
 destination_directory = "/home/#{user}/workspace/dotfiles"
 
 
