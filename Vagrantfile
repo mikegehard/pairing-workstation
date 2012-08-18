@@ -42,30 +42,10 @@ Vagrant::Config.run do |config|
      chef.cookbooks_path = "./cookbooks"
      chef.roles_path = "./roles"
      chef.data_bags_path = "./data_bags"
-     chef.add_recipe "build-essential"
-     chef.add_recipe "yum"
-     chef.add_recipe "git"
-     chef.add_recipe "vim"
-     chef.add_recipe "tmux"
-     chef.add_recipe 'dotfiles'
-     chef.add_recipe "openssl"
-     #chef.add_recipe "postgresql"
-     chef.add_recipe "rvm_prereq"
-     chef.add_recipe "rvm::user"
-     chef.add_recipe "wemux"
-     chef.add_recipe "user::data_bag"
-     #chef.add_role "web"
+     chef.add_role "base_pairing_station"
   
      # You may also specify custom JSON attributes:
      chef.json = { 
-       'rvm' => {
-         'user_installs' => [{
-            'user' => 'vagrant',
-            'default_ruby' => '1.9.3'}],
-         'user_rubies' => ['1.9.3'],
-         'user_global_gems' => ['name' => 'bundler', 'name' => 'rake' ]
-       },
-       'users' => ['visitor']
      }
 
    end
