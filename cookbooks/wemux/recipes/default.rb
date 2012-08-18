@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-user = node['current_user']
+user = node['wemux_hosts'].first
 destination_directory = "/home/#{user}/wemux"
 
 
