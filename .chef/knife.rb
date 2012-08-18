@@ -16,5 +16,5 @@ knife[:aws_access_key_id] = "#{ENV['AWS_ACCESS_KEY_ID']}"
 knife[:aws_secret_access_key] = "#{ENV['AWS_SECRET_ACCESS_KEY']}"
 knife[:aws_ssh_key_id] = "#{ENV['EC2_KEY']}"
 knife[:region] = "#{ENV['EC2_REGION']}"
-knife[:image] = "ami-a29943cb"
+knife[:image] = "ami-a29943cb" #Ubuntu 12.04 EBS backed
 knife[:flavor] = "m1.small"
